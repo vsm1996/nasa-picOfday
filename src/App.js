@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import './App.css'
+import PicOfDay from "./components/picOfDay/picOfDay";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    pictureData: {},
+  };
+
+  key = "yjAHVxbgGZ1PsNxgtpq7uarN6vssONNlBKddfmHs";
+
+  componentDidMount() {
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${this.key}`)
+      .then((response) => response.json())
+      .then((data) => this.setState({pictureData: data}));
+  }
+  render() {
+    const { pictureData} = this.state;
+    return (<div className="App">
+     <PicOfDay pictureData={pictureData}/>
+    </div>);
+  }
 }
 
 export default App;
