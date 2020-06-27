@@ -1,3 +1,5 @@
+A simple web-app displaying Nasa's Picture of the Day!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
