@@ -1,0 +1,21 @@
+.title {
+  margin-bottom: 1rem;
+  font-family: fantasy;
+}
+
+.copyright {
+  font-family: cursive;
+}
+
+.date {
+  margin-bottom: 2rem;
+}
+
+.image {
+  margin: 2rem 0;
+  width: 90%;
+}
+
+.explanation {
+  font-family: fantasy;
+}
